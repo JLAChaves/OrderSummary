@@ -18,5 +18,10 @@ namespace OrderSummary.Entities
             Email = email;
             BirthDate = date;
         }
+
+        public override string ToString()
+        {
+            return ($"Client: {Name} ({BirthDate.ToString("dd/MM/yyyy")}) - {Email}");
+        }
     }
 }

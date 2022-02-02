@@ -11,7 +11,6 @@ namespace OrderSummary.Entities
         public OrderItem()
         {
         }
-
         public OrderItem(int quantity, double price, Product product)
         {
             Quantity = quantity;
@@ -22,6 +21,11 @@ namespace OrderSummary.Entities
         public double SubTotal()
         {
             return Quantity * Price;
+        }
+
+        public override string ToString()
+        {
+            return ($"{Product.Name}, Quantity: {Quantity}, Subtotal: ${SubTotal().ToString("F2", CultureInfo.InvariantCulture)}");
         }
     }
 }
